@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#"><b>Stock Pulse</b></a>
+        <!-- Navbar content here -->
+    </nav>
+    <div class="container mt-5">
+
+        <h2 class="mb-4">Your Notes</h2>
+
+        <!-- Display existing notes -->
+        {% if notes %}
+        <ul class="list-group">
+            {% for note in notes %}
+            <li class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span>{{ note.title }}</span>
+                    <span class="text-muted">{{ note.created_at }}</span>
+                </div>
+                <p class="mt-2">{{ note.content }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No notes available.</p>
+        {% endif %}
+
+        <!-- Form for creating new note -->
+        <div class="mt-5">
+            <h2>Create a New Note</h2>
+            <form method="post" action="{% url 'notes' %}" class="form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary mt-2">Save Note</button>
+            </form>
+        </div>
+
+    </div>
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-primary fixed-bottom text-white">
+        <div class="container text-center">
+            <span>© 2023 StockPulse</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

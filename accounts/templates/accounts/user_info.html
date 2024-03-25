@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#"><b>Stock Pulse</b></a>
+        <!-- Navbar content here -->
+    </nav>
+
+    <div class="container">
+        <h2 class="my-4">User Profile</h2>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Profile Details</h4>
+                        <img src="{{ user.profile_picture.url }}" alt="Profile Picture" class="img-fluid img-thumbnail">
+                        <p class="card-text">
+                            <strong>First Name:</strong> {{ user.first_name }}
+                        </p>
+                        <p class="card-text">
+                            <strong>Last Name:</strong> {{ user.last_name }}
+                        </p>
+                        <p class="card-text">
+                            <strong>Username:</strong> {{ user.username }}
+                        </p>
+                        <p class="card-text">
+                            <strong>Email:</strong> {{ user.email }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-primary fixed-bottom text-white">
+        <div class="container text-center">
+            <span>© 2023 StockPulse</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

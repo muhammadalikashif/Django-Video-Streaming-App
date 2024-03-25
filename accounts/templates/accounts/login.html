@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Sign In</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Bootstrap App Landing Template">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+	<meta name="author" content="Themefisher">
+	<meta name="generator" content="Themefisher Small Apps Template v1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'plugins/slick/slick.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'plugins/slick/slick-theme.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'plugins/fancybox/jquery.fancybox.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'plugins/aos/aos.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">
+</head>
+
+<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+	<section class="user-login section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="block">
+						<!-- Image -->
+						
+						<!-- Content -->
+						<div class="content text-center">
+							<div class="logo">
+								<a href="{% url 'homepage' %}"><img src="{% static 'images/Logo1.png' %}"
+										alt="logo"></a>
+							</div>
+							<div class="title-text">
+								<h3>Sign in to To Your Account</h3>
+							</div>
+							<form action="{% url 'login' %}" method="POST">
+								{% csrf_token %}
+								<!-- Username -->
+								<input type="text" class="form-control main" id="username" name="username"
+									placeholder="Username" required>
+
+								<!-- Password -->
+								<input type="password" class="form-control main" id="password" name="password"
+									placeholder="Password" required>
+
+								<!-- Submit Button -->
+								<button type="submit" class="btn btn-main-sm">sign in</button>
+							</form>
+							<div class="new-acount">
+
+								<p>Don't Have an account? <a href="{% url 'signup' %}"> SIGN UP</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- To Top -->
+	<div class="scroll-top-to">
+		<i class="ti-angle-up"></i>
+	</div>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
